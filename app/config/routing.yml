@@ -1,0 +1,8 @@
+nsi_docs:
+    resource: "@NSIDocsBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
