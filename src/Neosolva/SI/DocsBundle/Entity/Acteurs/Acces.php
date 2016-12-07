@@ -5,12 +5,12 @@ namespace Neosolva\SI\DocsBundle\Entity\Acteurs;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Attribution
+ * Acces
  *
- * @ORM\Table(name="acteurs_attribution")
- * @ORM\Entity(repositoryClass="Neosolva\SI\DocsBundle\Repository\Acteurs\AttributionRepository")
+ * @ORM\Table(name="acteurs_acces")
+ * @ORM\Entity(repositoryClass="Neosolva\SI\DocsBundle\Repository\Acteurs\AccesRepository")
  */
-class Attribution
+class Acces
 {
     /**
      * @var int
@@ -28,6 +28,14 @@ class Attribution
      */
     protected $dateAttribution;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="actif", type="boolean")
+     */
+    protected $actif;
+	
+	
 
     /**
      * Get id
@@ -44,7 +52,7 @@ class Attribution
      *
      * @param \DateTime $dateAttribution
      *
-     * @return Attribution
+     * @return Acces
      */
     public function setDateAttribution($dateAttribution)
     {
@@ -61,6 +69,30 @@ class Attribution
     public function getDateAttribution()
     {
         return $this->dateAttribution;
+    }
+
+    /**
+     * Set actif
+     *
+     * @param boolean $actif
+     *
+     * @return Acces
+     */
+    public function setActif($actif)
+    {
+        $this->actif = $actif;
+
+        return $this;
+    }
+
+    /**
+     * Get actif
+     *
+     * @return bool
+     */
+    public function getActif()
+    {
+        return $this->actif;
     }
 }
 

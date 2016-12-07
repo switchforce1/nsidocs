@@ -19,28 +19,28 @@ class TypeAcces
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="libelle", type="string", length=200, unique=true)
      */
-    private $libelle;
+    protected $libelle;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="text")
      */
-    private $description;
+    protected $description;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateCreation", type="datetime")
      */
-    private $dateCreation;
+    protected $dateCreation;
 
 
     /**

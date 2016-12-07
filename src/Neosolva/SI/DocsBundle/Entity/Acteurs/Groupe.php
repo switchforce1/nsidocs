@@ -3,6 +3,7 @@
 namespace Neosolva\SI\DocsBundle\Entity\Acteurs;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Groupe
@@ -19,30 +20,48 @@ class Groupe
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=150, unique=true)
      */
-    private $nom;
+    protected $nom;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateCreation", type="datetime")
      */
-    private $dateCreation;
+    protected $dateCreation;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="text")
      */
-    private $description;
+    protected $description;
 
+	/**
+     * Un TypeUtilisateur a plusieurs utilisateurs.
+     * @ORM\OneToMany(targetEntity="Personne", mappedBy="groupe")
+     */
+	protected $personnes;
 
+	/**
+     * Un Groupe a plusieurs Access.
+     * @OneToMany(targetEntity="Acces", mappedBy="groupe")
+     */
+	protected $access;
+
+	public function __construct() 
+	{
+		$this->personnes = new ArrayCollection();
+		$this->access = new ArrayCollection();
+	}
+
+	
     /**
      * Get id
      *
@@ -124,5 +143,25 @@ class Groupe
     {
         return $this->description;
     }
+	
+	/**
+	 * 
+	 * @return type
+	 */
+	public function getPersonnes() 
+	{
+		return $this->personnes;
+	}
+
+	/**
+	 * 
+	 * @param type $personnes
+	 */
+	public function setPersonnes($personnes) 
+	{
+		$this->personnes = $personnes;
+	}
+
+
 }
 

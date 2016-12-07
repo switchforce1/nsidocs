@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="document_paragraphe")
  * @ORM\Entity(repositoryClass="Neosolva\SI\DocsBundle\Repository\Document\ParagrapheRepository")
  */
-class Paragraphe
+class Paragraphe extends Element
 {
     /**
      * @var int
@@ -19,14 +19,14 @@ class Paragraphe
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="contenue", type="text")
      */
-    private $contenue;
+    protected $contenue;
 
 
     /**

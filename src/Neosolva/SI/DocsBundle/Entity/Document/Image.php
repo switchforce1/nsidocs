@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="document_image")
  * @ORM\Entity(repositoryClass="Neosolva\SI\DocsBundle\Repository\Document\ImageRepository")
  */
-class Image
+class Image extends Element
 {
     /**
      * @var int
@@ -19,14 +19,14 @@ class Image
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="source", type="string", length=255)
      */
-    private $source;
+    protected $source;
 
 
     /**

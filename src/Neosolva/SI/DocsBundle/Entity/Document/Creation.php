@@ -19,14 +19,14 @@ class Creation
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateCreation", type="datetime")
      */
-    private $dateCreation;
+    protected $dateCreation;
 
 
     /**

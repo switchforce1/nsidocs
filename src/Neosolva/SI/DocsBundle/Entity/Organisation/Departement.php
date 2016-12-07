@@ -19,21 +19,21 @@ class Departement
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="libelle", type="string", length=255, unique=true)
      */
-    private $libelle;
+    protected $libelle;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="text", nullable=true)
      */
-    private $description;
+    protected $description;
 
 
     /**

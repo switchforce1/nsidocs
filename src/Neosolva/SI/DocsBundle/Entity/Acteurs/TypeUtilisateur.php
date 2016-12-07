@@ -3,6 +3,7 @@
 namespace Neosolva\SI\DocsBundle\Entity\Acteurs;
 
 use Doctrine\ORM\Mapping as ORM;
+use \Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * TypeUtilisateur
@@ -19,24 +20,35 @@ class TypeUtilisateur
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="libelle", type="string", length=150, unique=true)
      */
-    private $libelle;
+    protected $libelle;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="text", nullable=true)
      */
-    private $description;
+    protected $description;
 
+	/**
+     * Un TypeUtilisateur a plusieurs utilisateurs.
+     * @OneToMany(targetEntity="Utilisateur", mappedBy="typeUtilisateur")
+     */
+	protected $utilisateurs;
 
-    /**
+	public function __construct()
+	{
+		$this->utilisateurs = new ArrayCollection();
+	}
+
+	
+	/**
      * Get id
      *
      * @return int
@@ -93,5 +105,24 @@ class TypeUtilisateur
     {
         return $this->description;
     }
+	
+	/**
+	 * 
+	 * @return type
+	 */
+	function getUtilisateurs() 
+	{
+		return $this->utilisateurs;
+	}
+
+	/**
+	 * 
+	 * @param type $utilisateurs
+	 */
+	function setUtilisateurs($utilisateurs) 
+	{
+		$this->utilisateurs = $utilisateurs;
+	}
+
 }
 

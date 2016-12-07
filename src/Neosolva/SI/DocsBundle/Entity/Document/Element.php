@@ -19,28 +19,28 @@ class Element
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var int
      *
      * @ORM\Column(name="numero", type="integer")
      */
-    private $numero;
+    protected $numero;
 
     /**
      * @var string
      *
      * @ORM\Column(name="libelle", type="string", length=255, nullable=true)
      */
-    private $libelle;
+    protected $libelle;
 
     /**
      * @var int
      *
      * @ORM\Column(name="position", type="integer", nullable=true)
      */
-    private $position;
+    protected $position;
 
 
     /**

@@ -19,36 +19,49 @@ class Personne
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="matricule", type="string", length=255, unique=true)
      */
-    private $matricule;
+    protected $matricule;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
      */
-    private $nom;
+    protected $nom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=255)
      */
-    private $prenom;
+    protected $prenom;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateNaissance", type="date")
      */
-    private $dateNaissance;
-
+    protected $dateNaissance;
+	
+	/**
+     * One Cart has One Customer.
+     * @ORM\OneToOne(targetEntity="Utilisateur", inversedBy="utilisateur")
+     * @ORM\JoinColumn(name="utilisateur_id", referencedColumnName="id")
+     */
+	protected $utilisateur;
+	
+	/**
+     * Many Utilisateur have One TypeUtilisateur.
+     * @ORM\ManyToOne(targetEntity="Groupe", inversedBy="personne")
+     * @ORM\JoinColumn(name="personne_id", referencedColumnName="id")
+     */
+	protected $groupe;
 
     /**
      * Get id
@@ -155,5 +168,25 @@ class Personne
     {
         return $this->dateNaissance;
     }
+	
+	/**
+	 * 
+	 * @return type
+	 */
+	public function getUtilisateur()
+	{
+		return $this->utilisateur;
+	}
+
+	/**
+	 * 
+	 * @param type $utilisateur
+	 */
+	public function setUtilisateur($utilisateur)
+	{
+		$this->utilisateur = $utilisateur;
+	}
+
+
 }
 

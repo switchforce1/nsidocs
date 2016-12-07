@@ -19,28 +19,28 @@ class Document
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255, unique=true)
      */
-    private $nom;
+    protected $nom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255)
      */
-    private $titre;
+    protected $titre;
 
     /**
      * @var int
      *
      * @ORM\Column(name="nombreSection", type="integer", nullable=true)
      */
-    private $nombreSection;
+    protected $nombreSection;
 
 
     /**

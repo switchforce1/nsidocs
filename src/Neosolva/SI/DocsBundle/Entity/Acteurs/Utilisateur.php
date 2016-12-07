@@ -19,38 +19,43 @@ class Utilisateur
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="login", type="string", length=100, unique=true)
      */
-    private $login;
+    protected $login;
 
     /**
      * @var string
      *
      * @ORM\Column(name="motDePass", type="string", length=255)
      */
-    private $motDePass;
+    protected $motDePass;
 
     /**
      * @var bool
      *
      * @ORM\Column(name="etat", type="boolean")
      */
-    private $etat;
+    protected $etat;
 
-    /**
-     * @var \stdClass
-     *
-     * @ORM\Column(name="personne", type="object")
+	/**
+     * Many Utilisateur have One TypeUtilisateur.
+     * @ORM\ManyToOne(targetEntity="TypeUtilisateur", inversedBy="utilisateurs")
+     * @ORM\JoinColumn(name="utilisateur_id", referencedColumnName="id")
      */
-    private $personne;
+	protected $typeUtilisateur;
+	
+	/**
+     * Un utilisater correspond a une personne.
+     * @ORM\OneToOne(targetEntity="Personne", mappedBy="utilisateur")
+     */
+	protected $personne;
 
-
-    /**
+	/**
      * Get id
      *
      * @return int
@@ -155,5 +160,25 @@ class Utilisateur
     {
         return $this->personne;
     }
+	
+	/**
+	 * 
+	 * @return type
+	 */
+	public function getTypeUtilisateur()
+	{
+		return $this->typeUtilisateur;
+	}
+	
+	/**
+	 * 
+	 * @param type $typeUtilisateur
+	 */
+	public function setTypeUtilisateur($typeUtilisateur)
+	{
+		$this->typeUtilisateur = $typeUtilisateur;
+	}
+
+
 }
 

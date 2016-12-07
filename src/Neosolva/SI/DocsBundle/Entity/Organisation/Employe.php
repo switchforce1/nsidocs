@@ -19,14 +19,14 @@ class Employe
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="poste", type="string", length=255)
      */
-    private $poste;
+    protected $poste;
 
 
     /**
