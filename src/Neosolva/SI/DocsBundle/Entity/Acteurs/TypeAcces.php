@@ -42,7 +42,17 @@ class TypeAcces
      */
     protected $dateCreation;
 
-
+	/**
+     * Un Groupe a plusieurs Access.
+     * @OneToMany(targetEntity="Acces", mappedBy="typeAcces")
+     */
+	protected $access;
+	
+	public function __construct() 
+	{
+		$this->access = new ArrayCollection();
+	}
+	
     /**
      * Get id
      *

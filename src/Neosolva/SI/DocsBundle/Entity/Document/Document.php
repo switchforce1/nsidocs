@@ -41,6 +41,17 @@ class Document
      * @ORM\Column(name="nombreSection", type="integer", nullable=true)
      */
     protected $nombreSection;
+	
+	/**
+     * Un Groupe a plusieurs Access.
+     * @OneToMany(targetEntity="Acces", mappedBy="document")
+     */
+	protected $access;
+	
+	public function __construct() 
+	{
+		$this->access = new ArrayCollection();
+	}
 
 
     /**
