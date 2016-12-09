@@ -41,6 +41,13 @@ class Element
      * @ORM\Column(name="position", type="integer", nullable=true)
      */
     protected $position;
+	
+	/**
+     * Many Features have One Product.
+     * @ORM\ManyToOne(targetEntity="Section", inversedBy="elements")
+     * @ORM\JoinColumn(name="section_id", referencedColumnName="id")
+     */
+	protected $section;
 
 
     /**
@@ -124,5 +131,25 @@ class Element
     {
         return $this->position;
     }
+	
+	/**
+	 * 
+	 * @return type
+	 */
+	public function getSection() 
+	{
+		return $this->section;
+	}
+
+	/**
+	 * 
+	 * @param Section $section
+	 */
+	public function setSection($section) 
+	{
+		$this->section = $section;
+	}
+
+
 }
 

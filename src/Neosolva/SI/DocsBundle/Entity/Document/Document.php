@@ -44,15 +44,20 @@ class Document
 	
 	/**
      * Un Groupe a plusieurs Access.
-     * @OneToMany(targetEntity="Acces", mappedBy="document")
+     * @ORM\OneToMany(targetEntity="Acces", mappedBy="document")
      */
 	protected $access;
+	
+	/**
+     * One Product has Many Features.
+     * @ORM\OneToMany(targetEntity="Section", mappedBy="document")
+     */
+	protected $sections;
 	
 	public function __construct() 
 	{
 		$this->access = new ArrayCollection();
 	}
-
 
     /**
      * Get id
