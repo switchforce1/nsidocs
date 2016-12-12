@@ -51,7 +51,7 @@ class Groupe
 
 	/**
      * Un Groupe a plusieurs Access.
-     * @OneToMany(targetEntity="Acces", mappedBy="groupe")
+     * @ORM\OneToMany(targetEntity="Acces", mappedBy="groupe")
      */
 	protected $access;
 

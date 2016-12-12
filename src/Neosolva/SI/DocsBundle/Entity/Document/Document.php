@@ -44,7 +44,7 @@ class Document
 	
 	/**
      * Un Groupe a plusieurs Access.
-     * @ORM\OneToMany(targetEntity="Acces", mappedBy="document")
+     * @ORM\OneToMany(targetEntity="Neosolva\SI\DocsBundle\Entity\Acteurs\Acces", mappedBy="document")
      */
 	protected $access;
 	

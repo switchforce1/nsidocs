@@ -35,11 +35,25 @@ class Proposition
      */
     protected $description;
 
-
+	/**
+     * Many Features have One Product.
+     * @ORM\ManyToOne(targetEntity="Document", inversedBy="sections")
+     * @ORM\JoinColumn(name="document_id", referencedColumnName="id")
+     */
+    protected $document;
+	
+	/**
+     * Many Features have One Product.
+     * @ORM\ManyToOne(targetEntity="Neosolva\SI\DocsBundle\Entity\Organisation\Employe",
+	 *						 inversedBy="creations")
+     * @ORM\JoinColumn(name="employe_id", referencedColumnName="id")
+     */
+    protected $employe;
+	
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -93,5 +107,29 @@ class Proposition
     {
         return $this->description;
     }
+	
+	public function getDocument() 
+	{
+		return $this->document;
+	}
+
+	public function getEmploye() 
+	{
+		return $this->employe;
+	}
+
+	public function setDocument($document) 
+	{
+		$this->document = $document;
+		return $this;
+	}
+
+	public function setEmploye($employe) 
+	{
+		$this->employe = $employe;
+		return $this;
+	}
+
+
 }
 

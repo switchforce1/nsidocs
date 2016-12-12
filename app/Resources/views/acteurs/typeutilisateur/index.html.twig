@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Typeutilisateurs list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for typeUtilisateur in typeUtilisateurs %}
+            <tr>
+                <td><a href="{{ path('acteurs_typeutilisateur_show', { 'id': typeUtilisateur.id }) }}">{{ typeUtilisateur.id }}</a></td>
+                <td>{{ typeUtilisateur.libelle }}</td>
+                <td>{{ typeUtilisateur.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('acteurs_typeutilisateur_show', { 'id': typeUtilisateur.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('acteurs_typeutilisateur_edit', { 'id': typeUtilisateur.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('acteurs_typeutilisateur_new') }}">Create a new typeUtilisateur</a>
+        </li>
+    </ul>
+{% endblock %}

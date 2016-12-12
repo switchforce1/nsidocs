@@ -51,7 +51,8 @@ class Acces
 	
 	/**
      * Many Utilisateur have One TypeUtilisateur.
-     * @ORM\ManyToOne(targetEntity="Document", inversedBy="acess")
+     * @ORM\ManyToOne(targetEntity="Neosolva\SI\DocsBundle\Entity\Document\Document",
+	 *					 inversedBy="acess")
      * @ORM\JoinColumn(name="document_id", referencedColumnName="id")
      */
 	protected $document;

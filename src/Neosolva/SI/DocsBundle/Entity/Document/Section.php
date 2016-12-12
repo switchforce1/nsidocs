@@ -40,14 +40,14 @@ class Section
      * One Category has Many Categories.
      * @ORM\OneToMany(targetEntity="Section", mappedBy="parent")
      */
-    private $enfants;
+    protected $enfants;
 
     /**
      * Many Categories have One Category.
      * @ORM\ManyToOne(targetEntity="Section", inversedBy="enfants")
      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
      */
-    private $parent;
+    protected $parent;
 	
 	/**
      * One Product has Many Features.
@@ -60,7 +60,7 @@ class Section
      * @ORM\ManyToOne(targetEntity="Document", inversedBy="sections")
      * @ORM\JoinColumn(name="document_id", referencedColumnName="id")
      */
-    private $document;
+    protected $document;
 
 	public function __construct()
 	{

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Typeacces list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>Datecreation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for typeAcce in typeAcces %}
+            <tr>
+                <td><a href="{{ path('acteurs_typeacces_show', { 'id': typeAcce.id }) }}">{{ typeAcce.id }}</a></td>
+                <td>{{ typeAcce.libelle }}</td>
+                <td>{{ typeAcce.description }}</td>
+                <td>{% if typeAcce.dateCreation %}{{ typeAcce.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('acteurs_typeacces_show', { 'id': typeAcce.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('acteurs_typeacces_edit', { 'id': typeAcce.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('acteurs_typeacces_new') }}">Create a new typeAcce</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Creations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datecreation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for creation in creations %}
+            <tr>
+                <td><a href="{{ path('document_creation_show', { 'id': creation.id }) }}">{{ creation.id }}</a></td>
+                <td>{% if creation.dateCreation %}{{ creation.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('document_creation_show', { 'id': creation.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('document_creation_edit', { 'id': creation.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('document_creation_new') }}">Create a new creation</a>
+        </li>
+    </ul>
+{% endblock %}

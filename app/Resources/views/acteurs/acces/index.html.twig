@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Acces list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Dateattribution</th>
+                <th>Actif</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for acce in acces %}
+            <tr>
+                <td><a href="{{ path('acteurs_acces_show', { 'id': acce.id }) }}">{{ acce.id }}</a></td>
+                <td>{% if acce.dateAttribution %}{{ acce.dateAttribution|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if acce.actif %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('acteurs_acces_show', { 'id': acce.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('acteurs_acces_edit', { 'id': acce.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('acteurs_acces_new') }}">Create a new acce</a>
+        </li>
+    </ul>
+{% endblock %}

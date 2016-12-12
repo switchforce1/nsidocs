@@ -38,7 +38,7 @@ class TypeUtilisateur
 
 	/**
      * Un TypeUtilisateur a plusieurs utilisateurs.
-     * @OneToMany(targetEntity="Utilisateur", mappedBy="typeUtilisateur")
+     * @ORM\OneToMany(targetEntity="Utilisateur", mappedBy="typeUtilisateur")
      */
 	protected $utilisateurs;
 

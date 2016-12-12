@@ -44,7 +44,7 @@ class TypeAcces
 
 	/**
      * Un Groupe a plusieurs Access.
-     * @OneToMany(targetEntity="Acces", mappedBy="typeAcces")
+     * @ORM\OneToMany(targetEntity="Acces", mappedBy="typeAcces")
      */
 	protected $access;
 	

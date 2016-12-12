@@ -28,6 +28,20 @@ class Creation
      */
     protected $dateCreation;
 
+	/**
+     * Many Features have One Product.
+     * @ORM\ManyToOne(targetEntity="Document", inversedBy="sections")
+     * @ORM\JoinColumn(name="document_id", referencedColumnName="id")
+     */
+    protected $document;
+	
+	/**
+     * Many Features have One Product.
+     * @ORM\ManyToOne(targetEntity="Neosolva\SI\DocsBundle\Entity\Organisation\Employe",
+	 *						 inversedBy="creations")
+     * @ORM\JoinColumn(name="employe_id", referencedColumnName="id")
+     */
+    protected $employe;
 
     /**
      * Get id
@@ -62,5 +76,47 @@ class Creation
     {
         return $this->dateCreation;
     }
+	
+	/**
+	 * 
+	 * @return type
+	 */
+	public function getDocument() 
+	{
+		return $this->document;
+	}
+
+	/**
+	 * 
+	 * @return type
+	 */
+	public function getEmploye() 
+	{
+		return $this->employe;
+	}
+
+	/**
+	 * 
+	 * @param type $document
+	 * @return \Neosolva\SI\DocsBundle\Entity\Document\Creation
+	 */
+	public function setDocument($document) 
+	{
+		$this->document = $document;
+		return $this;
+	}
+
+	/**
+	 * 
+	 * @param type $employe
+	 * @return \Neosolva\SI\DocsBundle\Entity\Document\Creation
+	 */
+	public function setEmploye($employe) 
+	{
+		$this->employe = $employe;
+		return $this;
+	}
+
+
 }
 

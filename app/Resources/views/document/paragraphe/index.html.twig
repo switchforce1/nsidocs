@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Paragraphes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Contenue</th>
+                <th>Numero</th>
+                <th>Libelle</th>
+                <th>Position</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for paragraphe in paragraphes %}
+            <tr>
+                <td><a href="{{ path('document_paragraphe_show', { 'id': paragraphe.id }) }}">{{ paragraphe.id }}</a></td>
+                <td>{{ paragraphe.contenue }}</td>
+                <td>{{ paragraphe.numero }}</td>
+                <td>{{ paragraphe.libelle }}</td>
+                <td>{{ paragraphe.position }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('document_paragraphe_show', { 'id': paragraphe.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('document_paragraphe_edit', { 'id': paragraphe.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('document_paragraphe_new') }}">Create a new paragraphe</a>
+        </li>
+    </ul>
+{% endblock %}

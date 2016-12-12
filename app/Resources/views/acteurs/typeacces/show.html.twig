@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Typeacce</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ typeAcce.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ typeAcce.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ typeAcce.description }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{% if typeAcce.dateCreation %}{{ typeAcce.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('acteurs_typeacces_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('acteurs_typeacces_edit', { 'id': typeAcce.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
