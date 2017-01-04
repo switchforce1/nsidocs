@@ -27,7 +27,22 @@ class Attribution
      * @ORM\Column(name="dateAttribution", type="datetime", nullable=true)
      */
     protected $dateAttribution;
-
+	
+	
+	
+	/**
+     * Many Utilisateur have One TypeUtilisateur.
+     * @ORM\ManyToOne(targetEntity="Groupe", inversedBy="attribution")
+     * @ORM\JoinColumn(name="groupe_id", referencedColumnName="id")
+     */
+	protected $groupe;
+	
+	/**
+     * Many Utilisateur have One TypeUtilisateur.
+     * @ORM\ManyToOne(targetEntity="Personne", inversedBy="attribution")
+     * @ORM\JoinColumn(name="personne_id", referencedColumnName="id")
+     */
+	protected $personne;
 
     /**
      * Get id

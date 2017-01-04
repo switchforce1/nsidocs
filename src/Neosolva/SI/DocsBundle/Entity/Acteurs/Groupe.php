@@ -45,9 +45,9 @@ class Groupe
 
 	/**
      * Un TypeUtilisateur a plusieurs utilisateurs.
-     * @ORM\OneToMany(targetEntity="Personne", mappedBy="groupe")
+     * @ORM\OneToMany(targetEntity="Attribution", mappedBy="groupe")
      */
-	protected $personnes;
+	protected $attributions;
 
 	/**
      * Un Groupe a plusieurs Access.
@@ -161,7 +161,6 @@ class Groupe
 	{
 		$this->personnes = $personnes;
 	}
-
 
 }
 

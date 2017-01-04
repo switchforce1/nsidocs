@@ -27,7 +27,13 @@ class Employe
      * @ORM\Column(name="poste", type="string", length=255)
      */
     protected $poste;
-
+	
+	/**
+     * Many Features have One Product.
+     * @ORM\ManyToOne(targetEntity="Departement", inversedBy="employes")
+     * @ORM\JoinColumn(name="departement_id", referencedColumnName="id")
+     */
+    protected $departement;
 
     /**
      * Get id
@@ -63,6 +69,26 @@ class Employe
         return $this->poste;
     }
 	
-	
+	/**
+	 * 
+	 * @return type
+	 */
+	public function getDepartement() 
+	{
+		return $this->departement;
+	}
+
+	/**
+	 * 
+	 * @param type $departement
+	 * @return \Neosolva\SI\DocsBundle\Entity\Organisation\Employe
+	 */
+	public function setDepartement($departement) 
+	{
+		$this->departement = $departement;
+		return $this;
+	}
+
+
 }
 

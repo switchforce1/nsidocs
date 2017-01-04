@@ -57,11 +57,10 @@ class Personne
 	protected $utilisateur;
 	
 	/**
-     * Many Utilisateur have One TypeUtilisateur.
-     * @ORM\ManyToOne(targetEntity="Groupe", inversedBy="personne")
-     * @ORM\JoinColumn(name="personne_id", referencedColumnName="id")
+     * Un TypeUtilisateur a plusieurs utilisateurs.
+     * @ORM\OneToMany(targetEntity="Attribution", mappedBy="personne")
      */
-	protected $groupe;
+	protected $attributions;
 
     /**
      * Get id

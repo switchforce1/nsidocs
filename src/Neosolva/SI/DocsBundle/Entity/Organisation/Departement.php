@@ -34,6 +34,12 @@ class Departement
      * @ORM\Column(name="description", type="text", nullable=true)
      */
     protected $description;
+	
+	/**
+     * One Departement has Many Employes.
+     * @ORM\OneToMany(targetEntity="Employe", mappedBy="departement")
+     */
+	protected $employes;
 
 
     /**
@@ -93,5 +99,27 @@ class Departement
     {
         return $this->description;
     }
+	
+	/**
+	 * 
+	 * @return type
+	 */
+	public function getEmployes() 
+	{
+		return $this->employes;
+	}
+
+	/**
+	 * 
+	 * @param Employe $employes
+	 * @return \Neosolva\SI\DocsBundle\Entity\Organisation\Departement
+	 */
+	public function setEmployes($employes) 
+	{
+		$this->employes = $employes;
+		return $this;
+	}
+
+
 }
 
