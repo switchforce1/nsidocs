@@ -169,6 +169,5 @@ class Acces
 		$this->document = $document;
 	}
 
-
 }
 
