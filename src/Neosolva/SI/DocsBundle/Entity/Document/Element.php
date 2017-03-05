@@ -4,23 +4,12 @@ namespace Neosolva\SI\DocsBundle\Entity\Document;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
+/** 
  * Element
- *
- * @ORM\Table(name="document_element")
- * @ORM\Entity(repositoryClass="Neosolva\SI\DocsBundle\Repository\Document\ElementRepository")
+ * @ORM\MappedSuperclass 
  */
 class Element
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
-
     /**
      * @var int
      *

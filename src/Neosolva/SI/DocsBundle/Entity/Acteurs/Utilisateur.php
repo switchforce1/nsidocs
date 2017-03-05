@@ -3,6 +3,7 @@
 namespace Neosolva\SI\DocsBundle\Entity\Acteurs;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * Utilisateur
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="acteurs_utilisateur")
  * @ORM\Entity(repositoryClass="Neosolva\SI\DocsBundle\Repository\Acteurs\UtilisateurRepository")
  */
-class Utilisateur
+class Utilisateur extends BaseUser
 {
     /**
      * @var int
@@ -20,20 +21,6 @@ class Utilisateur
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="login", type="string", length=100, unique=true)
-     */
-    protected $login;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="motDePass", type="string", length=255)
-     */
-    protected $motDePass;
 
     /**
      * @var bool
@@ -55,6 +42,13 @@ class Utilisateur
      */
 	protected $personne;
 
+	 public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+		$this->etat = FALSE;
+    }
+	
 	/**
      * Get id
      *
@@ -63,54 +57,6 @@ class Utilisateur
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set login
-     *
-     * @param string $login
-     *
-     * @return Utilisateur
-     */
-    public function setLogin($login)
-    {
-        $this->login = $login;
-
-        return $this;
-    }
-
-    /**
-     * Get login
-     *
-     * @return string
-     */
-    public function getLogin()
-    {
-        return $this->login;
-    }
-
-    /**
-     * Set motDePass
-     *
-     * @param string $motDePass
-     *
-     * @return Utilisateur
-     */
-    public function setMotDePass($motDePass)
-    {
-        $this->motDePass = $motDePass;
-
-        return $this;
-    }
-
-    /**
-     * Get motDePass
-     *
-     * @return string
-     */
-    public function getMotDePass()
-    {
-        return $this->motDePass;
     }
 
     /**

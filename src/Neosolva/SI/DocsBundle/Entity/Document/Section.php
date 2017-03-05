@@ -12,7 +12,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Entity(repositoryClass="Neosolva\SI\DocsBundle\Repository\Document\SectionRepository")
  */
 class Section
-{
+{ 
     /**
      * @var int
      *
