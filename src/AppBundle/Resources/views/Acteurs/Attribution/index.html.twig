@@ -1,0 +1,39 @@
+{% extends 'AppBundle:Templates:template.html.twig' %}
+
+{% block main_content %}
+    <h1>Attributions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Dateattribution</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for attribution in attributions %}
+            <tr>
+                <td><a href="{{ path('acteurs_attribution_show', { 'id': attribution.id }) }}">{{ attribution.id }}</a></td>
+                <td>{% if attribution.dateAttribution %}{{ attribution.dateAttribution|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('acteurs_attribution_show', { 'id': attribution.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('acteurs_attribution_edit', { 'id': attribution.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('acteurs_attribution_new') }}">Create a new attribution</a>
+        </li>
+    </ul>
+{% endblock %}

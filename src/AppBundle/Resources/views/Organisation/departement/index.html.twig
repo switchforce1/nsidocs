@@ -1,0 +1,41 @@
+{% extends 'AppBundle:Templates:template.html.twig' %}
+
+{% block main_content %}
+    <h1>Departements list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for departement in departements %}
+            <tr>
+                <td><a href="{{ path('organisation_departement_show', { 'id': departement.id }) }}">{{ departement.id }}</a></td>
+                <td>{{ departement.libelle }}</td>
+                <td>{{ departement.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('organisation_departement_show', { 'id': departement.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('organisation_departement_edit', { 'id': departement.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('organisation_departement_new') }}">Create a new departement</a>
+        </li>
+    </ul>
+{% endblock %}

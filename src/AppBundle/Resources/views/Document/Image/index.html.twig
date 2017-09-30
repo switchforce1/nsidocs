@@ -1,0 +1,45 @@
+{% extends 'AppBundle:Templates:template.html.twig' %}
+
+{% block main_content %}
+    <h1>Images list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Source</th>
+                <th>Numero</th>
+                <th>Libelle</th>
+                <th>Position</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for image in images %}
+            <tr>
+                <td><a href="{{ path('document_image_show', { 'id': image.id }) }}">{{ image.id }}</a></td>
+                <td>{{ image.source }}</td>
+                <td>{{ image.numero }}</td>
+                <td>{{ image.libelle }}</td>
+                <td>{{ image.position }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('document_image_show', { 'id': image.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('document_image_edit', { 'id': image.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('document_image_new') }}">Create a new image</a>
+        </li>
+    </ul>
+{% endblock %}

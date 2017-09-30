@@ -1,4 +1,0 @@
-services:
-#    nsi_docs.example:
-#        class: Newer\SI\DocsBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]

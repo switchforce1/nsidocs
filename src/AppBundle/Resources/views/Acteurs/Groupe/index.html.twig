@@ -1,0 +1,43 @@
+{% extends 'AppBundle:Templates:template.html.twig' %}
+
+{% block main_content %}
+    <h1>Groupes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Datecreation</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for groupe in groupes %}
+            <tr>
+                <td><a href="{{ path('acteurs_groupe_show', { 'id': groupe.id }) }}">{{ groupe.id }}</a></td>
+                <td>{{ groupe.nom }}</td>
+                <td>{% if groupe.dateCreation %}{{ groupe.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ groupe.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('acteurs_groupe_show', { 'id': groupe.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('acteurs_groupe_edit', { 'id': groupe.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('acteurs_groupe_new') }}">Create a new groupe</a>
+        </li>
+    </ul>
+{% endblock %}
