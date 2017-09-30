@@ -1,0 +1,16 @@
+{% extends 'NSIDocsBundle:Templates:template.html.twig' %}
+
+{% block main_content %}
+    <h1>Typeutilisateur creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('acteurs_typeutilisateur_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

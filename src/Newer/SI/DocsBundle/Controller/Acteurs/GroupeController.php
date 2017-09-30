@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Groupe controller.
  *
- * @Route("acteurs_groupe")
+ * @Route("acteurs/groupe")
  */
 class GroupeController extends Controller
 {

@@ -31,7 +31,7 @@ class AccesType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'neosolva_si_docsbundle_acteurs_acces';
+        return 'newer_si_docsbundle_acteurs_acces';
     }
 
 

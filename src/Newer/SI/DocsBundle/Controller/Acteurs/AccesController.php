@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Acces controller.
  *
- * @Route("acteurs_acces")
+ * @Route("acteurs/acces")
  */
 class AccesController extends Controller
 {
@@ -26,7 +26,7 @@ class AccesController extends Controller
 
         $acces = $em->getRepository('NSIDocsBundle:Acteurs\Acces')->findAll();
 
-        return $this->render('acteurs/acces/index.html.twig', array(
+        return $this->render('NSIDocsBundle:Acteurs:Acces/index.html.twig', array(
             'acces' => $acces,
         ));
     }
@@ -51,7 +51,7 @@ class AccesController extends Controller
             return $this->redirectToRoute('acteurs_acces_show', array('id' => $acce->getId()));
         }
 
-        return $this->render('acteurs/acces/new.html.twig', array(
+        return $this->render('NSIDocsBundle:Acteurs:Acces/new.html.twig', array(
             'acce' => $acce,
             'form' => $form->createView(),
         ));
@@ -67,7 +67,7 @@ class AccesController extends Controller
     {
         $deleteForm = $this->createDeleteForm($acce);
 
-        return $this->render('acteurs/acces/show.html.twig', array(
+        return $this->render('NSIDocsBundle:Acteurs:Acces/show.html.twig', array(
             'acce' => $acce,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -91,7 +91,7 @@ class AccesController extends Controller
             return $this->redirectToRoute('acteurs_acces_edit', array('id' => $acce->getId()));
         }
 
-        return $this->render('acteurs/acces/edit.html.twig', array(
+        return $this->render('NSIDocsBundle:Acteurs:Acces/edit.html.twig', array(
             'acce' => $acce,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

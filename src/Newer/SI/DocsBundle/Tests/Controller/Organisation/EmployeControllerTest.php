@@ -19,7 +19,7 @@ class EmployeControllerTest extends WebTestCase
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'neosolva_si_docsbundle_organisation_employe[field_name]'  => 'Test',
+            'newer_si_docsbundle_organisation_employe[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class EmployeControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'neosolva_si_docsbundle_organisation_employe[field_name]'  => 'Foo',
+            'newer_si_docsbundle_organisation_employe[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

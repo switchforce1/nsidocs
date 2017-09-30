@@ -31,7 +31,7 @@ class ImageType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'neosolva_si_docsbundle_document_image';
+        return 'newer_si_docsbundle_document_image';
     }
 
 

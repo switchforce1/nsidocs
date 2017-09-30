@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Typeacce controller.
  *
- * @Route("acteurs_typeacces")
+ * @Route("acteurs/typeacces")
  */
 class TypeAccesController extends Controller
 {

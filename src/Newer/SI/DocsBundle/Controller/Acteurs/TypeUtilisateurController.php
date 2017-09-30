@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Typeutilisateur controller.
  *
- * @Route("acteurs_typeutilisateur")
+ * @Route("acteurs/typeutilisateur")
  */
 class TypeUtilisateurController extends Controller
 {

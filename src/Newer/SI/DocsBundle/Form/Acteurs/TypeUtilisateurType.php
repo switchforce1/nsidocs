@@ -31,7 +31,7 @@ class TypeUtilisateurType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'neosolva_si_docsbundle_acteurs_typeutilisateur';
+        return 'newer_si_docsbundle_acteurs_typeutilisateur';
     }
 
 

@@ -31,7 +31,7 @@ class SectionType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'neosolva_si_docsbundle_document_section';
+        return 'newer_si_docsbundle_document_section';
     }
 
 

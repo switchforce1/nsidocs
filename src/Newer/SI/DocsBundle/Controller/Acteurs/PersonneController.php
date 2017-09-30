@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Personne controller.
  *
- * @Route("acteurs_personne")
+ * @Route("acteurs/personne")
  */
 class PersonneController extends Controller
 {

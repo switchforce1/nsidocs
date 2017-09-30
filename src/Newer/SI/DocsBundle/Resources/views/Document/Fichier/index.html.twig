@@ -1,0 +1,49 @@
+{% extends 'NSIDocsBundle:Templates:template.html.twig' %}
+
+{% block body %}
+    <h1>Fichiers list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Taille</th>
+                <th>Type</th>
+                <th>Numero</th>
+                <th>Libelle</th>
+                <th>Position</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fichier in fichiers %}
+            <tr>
+                <td><a href="{{ path('document_fichier_show', { 'id': fichier.id }) }}">{{ fichier.id }}</a></td>
+                <td>{{ fichier.nom }}</td>
+                <td>{{ fichier.taille }}</td>
+                <td>{{ fichier.type }}</td>
+                <td>{{ fichier.numero }}</td>
+                <td>{{ fichier.libelle }}</td>
+                <td>{{ fichier.position }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('document_fichier_show', { 'id': fichier.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('document_fichier_edit', { 'id': fichier.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('document_fichier_new') }}">Create a new fichier</a>
+        </li>
+    </ul>
+{% endblock %}

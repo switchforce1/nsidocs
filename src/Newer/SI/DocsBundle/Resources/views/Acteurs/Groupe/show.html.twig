@@ -1,0 +1,40 @@
+{% extends 'NSIDocsBundle:Templates:template.html.twig' %}
+
+{% block main_content %}
+    <h1>Groupe</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ groupe.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ groupe.nom }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{% if groupe.dateCreation %}{{ groupe.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ groupe.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('acteurs_groupe_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('acteurs_groupe_edit', { 'id': groupe.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

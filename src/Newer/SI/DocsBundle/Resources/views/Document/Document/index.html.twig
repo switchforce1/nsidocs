@@ -1,0 +1,36 @@
+{% extends 'NSIDocsBundle:Templates:template.html.twig' %}
+
+{% block body %}
+    <h1>Documents list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Titre</th>
+                <th>Nombresection</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for document in documents %}
+            <tr>
+                <td><a href="{{ path('document_document_show', { 'id': document.id }) }}">{{ document.id }}</a></td>
+                <td>{{ document.nom }}</td>
+                <td>{{ document.titre }}</td>
+                <td>{{ document.nombreSection }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('document_document_show', { 'id': document.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

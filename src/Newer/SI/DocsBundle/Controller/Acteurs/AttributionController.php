@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Attribution controller.
  *
- * @Route("acteurs_attribution")
+ * @Route("acteurs/attribution")
  */
 class AttributionController extends Controller
 {
@@ -26,7 +26,7 @@ class AttributionController extends Controller
 
         $attributions = $em->getRepository('NSIDocsBundle:Acteurs\Attribution')->findAll();
 
-        return $this->render('acteurs/attribution/index.html.twig', array(
+        return $this->render('NSIDocsBundle:Acteurs:Attribution/index.html.twig', array(
             'attributions' => $attributions,
         ));
     }
@@ -51,7 +51,7 @@ class AttributionController extends Controller
             return $this->redirectToRoute('acteurs_attribution_show', array('id' => $attribution->getId()));
         }
 
-        return $this->render('acteurs/attribution/new.html.twig', array(
+        return $this->render('NSIDocsBundle:Acteurs:Attribution/new.html.twig', array(
             'attribution' => $attribution,
             'form' => $form->createView(),
         ));
@@ -67,7 +67,7 @@ class AttributionController extends Controller
     {
         $deleteForm = $this->createDeleteForm($attribution);
 
-        return $this->render('acteurs/attribution/show.html.twig', array(
+        return $this->render('NSIDocsBundle:Acteurs:Attribution/show.html.twig', array(
             'attribution' => $attribution,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -91,7 +91,7 @@ class AttributionController extends Controller
             return $this->redirectToRoute('acteurs_attribution_edit', array('id' => $attribution->getId()));
         }
 
-        return $this->render('acteurs/attribution/edit.html.twig', array(
+        return $this->render('NSIDocsBundle:Acteurs:Attribution/edit.html.twig', array(
             'attribution' => $attribution,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

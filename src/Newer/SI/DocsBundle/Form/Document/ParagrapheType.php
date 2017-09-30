@@ -31,7 +31,7 @@ class ParagrapheType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'neosolva_si_docsbundle_document_paragraphe';
+        return 'newer_si_docsbundle_document_paragraphe';
     }
 
 
