@@ -13,6 +13,8 @@ class LoginController extends Controller
     public function indexAction()
     {
         return $this->render('AppBundle:Login:connexion.html.twig');
+        
+        
     }
     
     /**
