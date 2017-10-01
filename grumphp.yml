@@ -2,6 +2,9 @@ parameters:
     git_dir: .
     bin_dir: vendor/bin
     tasks: 
-       phplint: ~ 
+       phplint:
+            exclude: []
+            jobs: ~
+            triggered_by: ['php', 'phtml', 'php3', 'php4', 'php5']
        phpcsfixer2: ~
        phpunit: ~
