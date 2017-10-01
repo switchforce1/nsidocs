@@ -2,6 +2,6 @@ parameters:
     git_dir: .
     bin_dir: vendor/bin
     tasks:
-        phplink: ~
+        phplink: ~ hk
         phpcsfixer: ~
         phpunit: ~

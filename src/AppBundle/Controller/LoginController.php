@@ -13,8 +13,6 @@ class LoginController extends Controller
     public function indexAction()
     {
         return $this->render('AppBundle:Login:connexion.html.twig');
-        
-        
     }
     
     /**
@@ -22,6 +20,7 @@ class LoginController extends Controller
      */
     public function logoutAction()
     {
+        
         return $this->render('AppBundle:Login:logout.html.twig');
     }
 }
