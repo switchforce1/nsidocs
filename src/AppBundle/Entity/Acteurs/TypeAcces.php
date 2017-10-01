@@ -27,6 +27,13 @@ class TypeAcces
      * @ORM\Column(name="libelle", type="string", length=200, unique=true)
      */
     protected $libelle;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etiquete", type="string", length=10, unique=true)
+     */
+    protected $etiquete;
 
     /**
      * @var string
@@ -87,6 +94,46 @@ class TypeAcces
         return $this->libelle;
     }
 
+    /**
+     * 
+     * @param type $etiquete
+     * @return $this
+     */
+    public function setEtiquete($etiquete)
+    {
+        $this->etiquete = $etiquete;
+        return $this;
+    }
+    
+    /**
+     * 
+     * @return type
+     */
+    public function getEtiquete()
+    {
+        return $this->etiquete;
+    }
+
+    /**
+     * 
+     * @param type $access
+     * @return $this
+     */
+    public function setAccess($access)
+    {
+        $this->access = $access;
+        return $this;
+    }
+
+    /**
+     * 
+     * @return type
+     */
+    public function getAccess()
+    {
+        return $this->access;
+    }
+    
     /**
      * Set description
      *
