@@ -12,4 +12,6 @@ class TypeAccesEtiquete
     const ACCES_MODIFICATION = 3;
     const ACCES_PARTAGE = 4;
     const ACCES_CONTROLE = 5;
+    
+    
 }
