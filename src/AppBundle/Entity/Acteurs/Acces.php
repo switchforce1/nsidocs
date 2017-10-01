@@ -149,6 +149,8 @@ class Acces
 	public function setGroupe($groupe) 
 	{
 		$this->groupe = $groupe;
+        
+        
 	}
 
 	/**
