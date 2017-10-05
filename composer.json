@@ -59,6 +59,9 @@
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
+        },
+        "grumphp": {
+            "config-default-path": "path/to/grumphp.yml"
         }
     }
 }
