@@ -61,7 +61,7 @@
             "file": "app/config/parameters.yml"
         },
         "grumphp": {
-            "config-default-path": "path/to/grumphp.yml"
+            "config-default-path": "grumphp.yml"
         }
     }
 }
