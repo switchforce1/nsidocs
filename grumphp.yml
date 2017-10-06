@@ -3,5 +3,5 @@ parameters:
     bin_dir: vendor/bin
     tasks:
         phplink: ~
-        #phpcsfixer: ~
+        phpcsfixer: ~
         phpunit: ~
