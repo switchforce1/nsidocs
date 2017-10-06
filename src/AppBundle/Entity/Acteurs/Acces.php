@@ -168,8 +168,6 @@ class Acces
 	 */
 	public function setDocument($document) 
 	{
-        
-        
 		$this->document = $document;
 	}
 
