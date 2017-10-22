@@ -1,7 +1,7 @@
 {% extends 'AppBundle:Templates:template.html.twig' %}
 
 {% block main_content %}
-    <h1>Utilisateur</h1>
+    <h1>Document edit</h1>
     <div class="row">
         <div class="col-md-12">
             <div class="box">
@@ -34,33 +34,14 @@
                     <div class="row"> 
                         <div class="col-md-12">
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ utilisateur.id }}</td>
-            </tr>
-            <tr>
-                <th>Login</th>
-                <td>{{ utilisateur.login }}</td>
-            </tr>
-            <tr>
-                <th>Motdepass</th>
-                <td>{{ utilisateur.motDePass }}</td>
-            </tr>
-            <tr>
-                <th>Etat</th>
-                <td>{% if utilisateur.etat %}Yes{% else %}No{% endif %}</td>
-            </tr>
-        </tbody>
-    </table>
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
 
     <ul>
         <li>
-            <a href="{{ path('acteurs_utilisateur_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('acteurs_utilisateur_edit', { 'id': utilisateur.id }) }}">Edit</a>
+            <a href="{{ path('document_document_index') }}">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
